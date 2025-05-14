@@ -36,9 +36,13 @@
     .top-bar img {
       height: 50px;
     }
+     .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
     .nav-links a {
       color: white;
-      margin-left: 24px;
       text-decoration: none;
       font-weight: 500;
       transition: opacity 0.3s ease;
@@ -55,6 +59,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 0 20px;
     }
     .hero h1 {
       font-size: 3em;
@@ -67,22 +72,24 @@
     .btn {
       background-color: var(--secondary);
       color: white;
-      padding: 14px 28px;
+      padding: 12px 24px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      display: inline-block;
     }
     section {
-      padding: 60px 20px;
+      padding: 40px 16px;
       max-width: 1100px;
       margin: auto;
     }
     section h2 {
       color: var(--primary);
-      font-size: 1.8em;
+      font-size: 1.6em;
       margin-bottom: 16px;
+      text-align: center;
     }
-    ul {
+   ul {
       list-style: none;
       padding-left: 0;
     }
@@ -98,11 +105,11 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .map-embed {
-  margin-top: 24px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+      margin-top: 24px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
     .footer {
       background-color: var(--primary);
       color: white;
@@ -113,13 +120,13 @@
     .country-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 16px;
       justify-content: center;
       margin-top: 20px;
     }
     .country-grid img {
-      width: 150px;
-      height: 100px;
+      width: 120px;
+      height: 80px;
       object-fit: cover;
       border-radius: 6px;
       cursor: pointer;
@@ -136,13 +143,14 @@
       background-color: rgba(0,0,0,0.5);
       justify-content: center;
       align-items: center;
+      padding: 16px;
     }
     .modal-content {
       background: white;
-      padding: 30px;
+      padding: 20px;
       border-radius: 10px;
-      width: 90%;
-      max-width: 500px;
+      width: 100%;
+      max-width: 400px;
     }
     .modal-content input {
       width: 100%;
@@ -151,7 +159,7 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-    .modal-content button {
+     .modal-content button {
       width: 100%;
       padding: 12px;
       margin-top: 10px;
@@ -167,10 +175,25 @@
       justify-content: center;
       gap: 16px;
       margin-top: 20px;
+      flex-wrap: wrap;
     }
     .social-icons img {
       width: 28px;
       height: 28px;
+    }
+     @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 16px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
