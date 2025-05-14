@@ -200,7 +200,59 @@
   </section>
 
   <a href="https://wa.me/491733442684" class="whatsapp-button" target="_blank">💬</a>
+ <section id="ulkeler">
+    <h2>Hizmet Verdiğimiz Ülkeler</h2>
+    <div class="country-grid">
+      <img src="germany.jpg" alt="Almanya" onclick="openModal('Almanya')">
+      <img src="netherlands.jpg" alt="Hollanda" onclick="openModal('Hollanda')">
+      <img src="belgium.jpg" alt="Belçika" onclick="openModal('Belçika')">
+      <img src="luxembourg.jpg" alt="Lüksemburg" onclick="openModal('Lüksemburg')">
+      <img src="denmark.jpg" alt="Danimarka" onclick="openModal('Danimarka')">
+      <img src="austria.jpg" alt="Avusturya" onclick="openModal('Avusturya')">
+      <img src="france.jpg" alt="Fransa" onclick="openModal('Fransa')">
+      <img src="spain.jpg" alt="İspanya" onclick="openModal('İspanya')">
+      <img src="italy.jpg" alt="İtalya" onclick="openModal('İtalya')">
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h3 id="selected-country">Ülke</h3>
+        <input type="text" id="width" placeholder="En (cm)">
+        <input type="text" id="height" placeholder="Boy (cm)">
+        <input type="text" id="depth" placeholder="Yükseklik (cm)">
+        <input type="text" id="weight" placeholder="Ağırlık (kg)">
+        <button onclick="calculatePrice()">Fiyat Hesapla</button>
+        <button onclick="sendReservation()">Rezervasyon Oluştur</button>
+      </div>
+    </div>
+  </section>
 
+  <script>
+    let selectedCountry = '';
+
+    function openModal(country) {
+      selectedCountry = country;
+      document.getElementById('selected-country').innerText = country;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function calculatePrice() {
+      const w = document.getElementById('width').value;
+      const h = document.getElementById('height').value;
+      const d = document.getElementById('depth').value;
+      const kg = document.getElementById('weight').value;
+      const price = (parseFloat(kg) * 2 + 50).toFixed(2); // örnek formül
+      alert(`${selectedCountry} için tahmini fiyat: €${price}`);
+    }
+
+    function sendReservation() {
+      const w = document.getElementById('width').value;
+      const h = document.getElementById('height').value;
+      const d = document.getElementById('depth').value;
+      const kg = document.getElementById('weight').value;
+      const msg = `📦 Rezervasyon Talebi:%0AÜlke: ${selectedCountry}%0AEn: ${w} cm%0ABoy: ${h} cm%0AYükseklik: ${d} cm%0AAğırlık: ${kg} kg`;
+      window.open(`https://wa.me/905312989741?text=${msg}`, '_blank');
+    }
+  </script>
   <footer class="footer">
     <p>&copy; 2025 MFT Europa International Logistics. Tüm hakları saklıdır.</p>
   </footer>
