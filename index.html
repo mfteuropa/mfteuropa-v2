@@ -1,312 +1,241 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MFT Europa International Logistics - Türkiye'den Avrupa'ya profesyonel karayolu taşımacılığı." />
-  <meta name="keywords" content="lojistik, uluslararası taşımacılık, Avrupa kargo, MFT Europa, nakliyat" />
-  <meta name="author" content="MFT Europa" />
-  <title>MFT Europa International Logistics</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MFT Europa - Lojistik</title>
+  <meta name="description" content="MFT Europa - Türkiye'den Avrupa'ya güvenilir lojistik hizmetleri.">
+  <meta name="keywords" content="lojistik, taşıma, parsiyel, komple, Avrupa, MFT Europa">
+  <meta name="author" content="MFT Europa">
+  <link rel="icon" href="favicon.ico">
   <style>
     :root {
-      --primary: #003366;
-      --secondary: #0099cc;
-      --text: #333;
-      --light: #f9f9f9;
+      --primary: #1c345a;
+      --secondary: #ffcc00;
+      --background: #f5f5f5;
+      --accent: #2e4a7d;
     }
-     * {
+    * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--light);
-      color: var(--text);
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      background: var(--background);
+      color: #333;
     }
-    header.top-bar {
-      background-color: var(--primary);
-      color: white;
+    header {
+      background: url('banner.jpg') center/cover no-repeat;
+      height: 500px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
-      padding: 12px 32px;
-    }
-    .top-bar img {
-      height: 50px;
-    }
-     .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.3s ease;
-    }
-    .nav-links a:hover {
-      opacity: 0.8;
-    }
-    .hero {
-      background: url('hero-truck.jpg') center/cover no-repeat;
+      justify-content: center;
       color: white;
       text-align: center;
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 20px;
     }
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 12px;
-    }
-    .hero p {
-      font-size: 1.2em;
-      margin-bottom: 24px;
-    }
-    .btn {
-      background-color: var(--secondary);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-    }
-    section {
-      padding: 40px 16px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    section h2 {
-      color: var(--primary);
-      font-size: 1.6em;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-   ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul li::before {
-      content: "✔ ";
-      color: var(--secondary);
-      margin-right: 8px;
-    }
-    .section-image, .map {
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 24px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .map-embed {
-      margin-top: 24px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .footer {
-      background-color: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 16px;
-      font-size: 0.95em;
-    }
-    .country-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .country-grid img {
-      width: 120px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 6px;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
-      padding: 16px;
-    }
-    .modal-content {
-      background: white;
+    header h1 {
+      background: rgba(28, 52, 90, 0.7);
       padding: 20px;
       border-radius: 10px;
-      width: 100%;
-      max-width: 400px;
+      font-size: 36px;
     }
-    .modal-content input {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-     .modal-content button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-weight: bold;
-      border: none;
-      color: white;
+    nav {
+      position: sticky;
+      top: 0;
       background: var(--primary);
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .social-icons {
       display: flex;
       justify-content: center;
-      gap: 16px;
-      margin-top: 20px;
       flex-wrap: wrap;
+      gap: 16px;
+      padding: 12px;
+      z-index: 1000;
     }
-    .social-icons img {
-      width: 28px;
-      height: 28px;
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background 0.3s;
     }
-     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2em;
-      }
-      .hero p {
-        font-size: 1em;
-      }
-      .nav-links {
-        justify-content: center;
-        gap: 16px;
-        margin-top: 10px;
-        flex-wrap: wrap;
-      }
+    nav a:hover {
+      background: var(--secondary);
+      color: black;
+    }
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    h2 {
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+    .cta-button, .whatsapp-button {
+      position: fixed;
+      right: 20px;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1001;
+    }
+    .cta-button {
+      bottom: 135px;
+      background: var(--secondary);
+      color: var(--primary);
+    }
+    .whatsapp-button {
+      bottom: 20px;
+      background: #25d366;
+      color: white;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .popup-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .popup-content button {
+      margin-top: 10px;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .popup-content button:hover {
+      background: var(--secondary);
+      color: #000;
+    }
+    footer {
+      text-align: center;
+      background: var(--primary);
+      color: white;
+      padding: 30px 20px;
     }
   </style>
 </head>
 <body>
-  <header class="top-bar">
-    <img src="logo.ico" alt="MFT Europa Logo" />
-    <nav class="nav-links">
-      <a href="#hakkimizda">Hakkımızda</a>
-      <a href="#hizmetler">Hizmetler</a>
-      <a href="#ulkeler">Ülkeler</a>
-      <a href="#iletisim">İletişim</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Güven Taşırız, Gelecek Kurarız</h1>
-    <p>Türkiye'den Avrupa'nın kalbine uzanan güvenilir lojistik çözümleri</p>
-    <a href="#iletisim" class="btn">Hemen Teklif Al</a>
+  <header><h1>MFT Europa Lojistik</h1></header>
+  <nav>
+    <a href="#anasayfa">Anasayfa</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#ulkeler">Ülkeler</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+  <section id="anasayfa">
+    <h2>Hoş Geldiniz</h2>
+    <p><strong>MFT Europa</strong>, Türkiye'den Avrupa'ya profesyonel lojistik çözümleri sunar.</p>
   </section>
-
   <section id="hakkimizda">
     <h2>Hakkımızda</h2>
-    <p>MFT Europa International Logistics olarak, Türkiye'den Avrupa'ya tekstil, mobilya, perde ve hırdavat taşımacılığında uzmanız. Kurumsal değerlerimiz: şeffaflık, güven, hız ve müşteri memnuniyeti.</p>
-    <img src="ofis-ve-arac.png" alt="Ofis ve araçlarımız" class="section-image" />
+    <p>10+ yıl tecrübe, uzman kadro ve Avrupa genelinde güçlü teslimat ağı ile hizmetinizdeyiz.</p>
   </section>
-
   <section id="hizmetler">
     <h2>Hizmetlerimiz</h2>
     <ul>
-      <li>Parsiyel ve komple taşımacılık</li>
-      <li>Tekstil, perde, mobilya ve hırdavat lojistiği</li>
-      <li>Kapıdan kapıya teslimat</li>
-      <li>Online takip sistemi</li>
-      <li>Profesyonel müşteri destek hattı</li>
+      <li>Parsiyel Taşımacılık</li>
+      <li>Komple Taşımacılık</li>
+      <li>Mobilya, Tekstil, Hırdavat Nakliyesi</li>
+      <li>Kapıdan Kapıya Teslimat</li>
     </ul>
-    <img src="teslimat-gorseli.jpg" alt="Teslimat süreci" class="section-image" />
   </section>
-<a href="https://wa.me/491733442684" class="whatsapp-button" target="_blank">💬</a>
- <section id="ulkeler">
+  <section id="ulkeler">
     <h2>Hizmet Verdiğimiz Ülkeler</h2>
-    <div class="country-grid">
-      <img src="germany.png" alt="Almanya" onclick="openModal('Almanya')">
-      <img src="netherlands.png" alt="Hollanda" onclick="openModal('Hollanda')">
-      <img src="belgium.png" alt="Belçika" onclick="openModal('Belçika')">
-      <img src="luxembourg.png" alt="Lüksemburg" onclick="openModal('Lüksemburg')">
-      <img src="denmark.png" alt="Danimarka" onclick="openModal('Danimarka')">
-      <img src="austria.png" alt="Avusturya" onclick="openModal('Avusturya')">
-      <img src="france.png" alt="Fransa" onclick="openModal('Fransa')">
-      <img src="spain.png" alt="İspanya" onclick="openModal('İspanya')">
-      <img src="italy.png" alt="İtalya" onclick="openModal('İtalya')">
-    </div>
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <h3 id="selected-country">Ülke</h3>
-        <input type="text" id="width" placeholder="En (cm)">
-        <input type="text" id="height" placeholder="Boy (cm)">
-        <input type="text" id="depth" placeholder="Yükseklik (cm)">
-        <input type="text" id="weight" placeholder="Ağırlık (kg)">
-        <button onclick="calculatePrice()">Fiyat Hesapla</button>
-        <button onclick="sendReservation()">Rezervasyon Oluştur</button>
-      </div>
-    </div>
+    <p>Almanya, Hollanda, Belçika, Fransa, İtalya, İspanya, Lüksemburg, Danimarka, Avusturya</p>
   </section>
   <section id="iletisim">
     <h2>İletişim</h2>
-    <p>Bize ulaşmak için aşağıdaki kanalları kullanabilirsiniz:</p>
-    <ul>
-      <li><strong>Email:</strong> <a href="mailto:mfteuropa.tr@gmail.com">mfteuropa.tr@gmail.com</a></li>
-      <li><strong>Telefon:</strong> <a href="tel:+491733442684">+49 173 3442684</a> / <a href="tel:+905312989741">+90 531 298 9741</a></li>
-      <li><strong>Instagram:</strong> <a href="https://instagram.com/mfteuropa" target="_blank">@mfteuropa</a></li>
-    </ul>
-    <div class="social-icons">
-      <a href="https://instagram.com/mfteuropa" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" /></a>
-      <a href="https://facebook.com/mfteuropa" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" /></a>
-      <a href="https://wa.me/491733442684" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" /></a>
-    </div>
-    <p style="text-align:center; margin-top: 20px;">
-      <a href="https://wa.me/491733442684" class="btn">WhatsApp'tan Ulaşın</a>
-    </p>
-    <div class="map-embed">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12039.426780879254!2d28.8838149!3d41.0108868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabb17f7be8355%3A0x2d35f0ad6de61aea!2sMehmet%20Nesih%20%C3%96zmen%2C%20Ladin%20Sk.%20No%3A19%2F3%2C%2034173%20G%C3%BCng%C3%B6ren%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1715719407031!5m2!1str!2str" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    <p><strong>Telefon:</strong> <a href="tel:+905312989741">+90 531 298 97 41</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/905312989741" target="_blank">+90 531 298 97 41</a></p>
+    <p><strong>E-posta:</strong> <a href="mailto:mfteuropa.tr@gmail.com">mfteuropa.tr@gmail.com</a></p>
+    <p><strong>Adres:</strong> Mehmet Nesih Özmen, Ladin Sk. No:19, Güngören/İstanbul</p>
   </section>
+  <a href="#" class="cta-button" onclick="openPopup()">💰 Fiyat Al</a>
+  <a href="https://wa.me/905312989741" target="_blank" class="whatsapp-button">💬 WhatsApp Destek</a>
 
+  <div class="popup" id="fiyatPopup">
+    <div class="popup-content">
+      <h2>Koli Bilgileri</h2>
+      <input type="text" id="ulke" placeholder="Ülke">
+      <input type="number" id="en" placeholder="Koli Eni (cm)">
+      <input type="number" id="boy" placeholder="Koli Boyu (cm)">
+      <input type="number" id="yukseklik" placeholder="Koli Yüksekliği (cm)">
+      <input type="number" id="agirlik" placeholder="Koli Ağırlığı (kg)">
+      <p id="fiyat">Fiyat: -</p>
+      <button onclick="hesaplaFiyat()">Fiyat Hesapla</button>
+      <button onclick="rezervasyonOlustur()">Rezervasyon Yap</button>
+      <button onclick="closePopup()">Kapat</button>
+    </div>
+  </div>
+
+  <footer>© 2025 MFT Europa. Tüm hakları saklıdır.</footer>
   <script>
-    let selectedCountry = '';
-
-    function openModal(country) {
-      selectedCountry = country;
-      document.getElementById('selected-country').innerText = country;
-      document.getElementById('modal').style.display = 'flex';
+    function openPopup() {
+      document.getElementById('fiyatPopup').style.display = 'flex';
     }
-
-    function calculatePrice() {
-      const w = document.getElementById('width').value;
-      const h = document.getElementById('height').value;
-      const d = document.getElementById('depth').value;
-      const kg = document.getElementById('weight').value;
-      const price = (parseFloat(kg) * 2 + 50).toFixed(2); // örnek formül
-      alert(`${selectedCountry} için tahmini fiyat: €${price}`);
+    function closePopup() {
+      document.getElementById('fiyatPopup').style.display = 'none';
     }
-
-    function sendReservation() {
-      const w = document.getElementById('width').value;
-      const h = document.getElementById('height').value;
-      const d = document.getElementById('depth').value;
-      const kg = document.getElementById('weight').value;
-      const msg = `📦 Rezervasyon Talebi:%0AÜlke: ${selectedCountry}%0AEn: ${w} cm%0ABoy: ${h} cm%0AYükseklik: ${d} cm%0AAğırlık: ${kg} kg`;
-      window.open(`https://wa.me/905312989741?text=${msg}`, '_blank');
+    function hesaplaFiyat() {
+      const en = parseFloat(document.getElementById("en").value) || 0;
+      const boy = parseFloat(document.getElementById("boy").value) || 0;
+      const yuk = parseFloat(document.getElementById("yukseklik").value) || 0;
+      const agirlik = parseFloat(document.getElementById("agirlik").value) || 0;
+      const ulke = document.getElementById("ulke").value.trim();
+      let fiyat = "-";
+      if (["Almanya", "Hollanda", "Belçika"].includes(ulke)) {
+        if (agirlik >= 20 && agirlik <= 29) fiyat = "45€";
+        else if (agirlik >= 30 && agirlik <= 44) fiyat = "55€";
+        else if (agirlik >= 45 && agirlik <= 60) fiyat = "60€";
+      } else if (["İtalya", "İspanya", "Fransa"].includes(ulke)) {
+        if (agirlik >= 20 && agirlik <= 29) fiyat = "50€";
+        else if (agirlik >= 30 && agirlik <= 60) fiyat = "65€";
+      }
+      document.getElementById("fiyat").innerText = "Fiyat: " + fiyat;
+    }
+    function rezervasyonOlustur() {
+      const ulke = document.getElementById("ulke").value;
+      const en = document.getElementById("en").value;
+      const boy = document.getElementById("boy").value;
+      const yuk = document.getElementById("yukseklik").value;
+      const agirlik = document.getElementById("agirlik").value;
+      const fiyat = document.getElementById("fiyat").innerText;
+      const mesaj = `📦 Rezervasyon\nÜlke: ${ulke}\nEn: ${en} cm\nBoy: ${boy} cm\nYükseklik: ${yuk} cm\nAğırlık: ${agirlik} kg\n${fiyat}`;
+      window.open(`https://wa.me/905312989741?text=${encodeURIComponent(mesaj)}`, '_blank');
     }
   </script>
-  <footer class="footer">
-    <p>&copy; 2025 MFT Europa International Logistics. Tüm hakları saklıdır.</p>
-  </footer>
 </body>
 </html>
